@@ -8,8 +8,10 @@ const Container = styled.div`
 export default function SignInputs() {
   return (
     <Container>
-      <Input type="email" placeholder="Email address" />
-      <Input type="password" placeholder="Password" />
+      <div>
+        <Input type="email" placeholder="Email address" />
+        <Input type="password" placeholder="Password" />
+      </div>
     </Container>
   );
 }
