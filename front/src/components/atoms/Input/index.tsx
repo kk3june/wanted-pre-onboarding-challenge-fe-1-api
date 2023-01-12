@@ -1,9 +1,11 @@
 import styled from '@emotion/styled';
+import { ChangeEvent } from 'react';
 
 type Props = {
   type: 'text' | 'email' | 'password';
   className?: string;
   placeholder: string;
+  onChange?: (value: string) => void;
 };
 
 const StyledInput = styled.input`
@@ -18,8 +20,17 @@ const StyledInput = styled.input`
   color: black;
 `;
 
-export const Input = ({ type, className, placeholder }: Props) => {
+export const Input = ({ type, className, placeholder, onChange }: Props) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    onChange && onChange(value);
+  };
   return (
-    <StyledInput type={type} className={className} placeholder={placeholder} />
+    <StyledInput
+      type={type}
+      className={className}
+      placeholder={placeholder}
+      onChange={handleChange}
+    />
   );
 };
