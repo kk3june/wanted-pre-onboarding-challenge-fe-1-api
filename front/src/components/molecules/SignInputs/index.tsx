@@ -23,7 +23,7 @@ export default function SignInputs({
       {isLogin ? (
         <div>
           <Input
-            type="email"
+            type="text"
             placeholder="Email address"
             onChange={handleEmail}
           />
@@ -36,7 +36,7 @@ export default function SignInputs({
       ) : (
         <div>
           <Input
-            type="email"
+            type="text"
             placeholder="Email address"
             onChange={handleEmail}
           />
