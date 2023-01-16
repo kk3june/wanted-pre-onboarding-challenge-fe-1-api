@@ -4,7 +4,7 @@ import Layout from '../src/components/template/Layout';
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <Layout withOutNav>
       <Auth />
     </Layout>
   );

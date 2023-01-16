@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { PropsWithChildren } from 'react';
 
 type Props = PropsWithChildren & {
-  className: string;
+  className?: string;
 };
 
 const StyledText = styled.p``;

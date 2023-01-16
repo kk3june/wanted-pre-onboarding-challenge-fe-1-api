@@ -12,9 +12,15 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 350px;
+  margin: 100px auto;
   background-color: transparent;
 `;
+
+const StyledForm = styled.form`
+  width: 100%;
+`;
+
 export default function Auth() {
   const [isLogin, setIsLogin] = useState<boolean>(true);
   const [token, setToken] = useState<string | null>(null);
@@ -89,7 +95,7 @@ export default function Auth() {
   return (
     <Container>
       <SignTab isLogin={isLogin} onClick={clickSignTab} />
-      <form onSubmit={handleSubmit}>
+      <StyledForm onSubmit={handleSubmit}>
         <SignInputs
           isLogin={isLogin}
           handleEmail={setEmail}
@@ -115,7 +121,7 @@ export default function Auth() {
             margin-top: 10px;
           `}
         ></div>
-      </form>
+      </StyledForm>
     </Container>
   );
 }
