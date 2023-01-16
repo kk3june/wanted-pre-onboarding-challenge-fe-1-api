@@ -6,12 +6,13 @@ type Props = PropsWithChildren & {
   className?: string;
   isLogin?: boolean;
   isDisable?: boolean;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent) => void;
 };
 
 const StyledBtn = styled.button<Props>`
   width: 100%;
   height: 50px;
+  min-width: 55px;
   border-radius: 20px;
   border-style: none;
   font-size: 18px;
@@ -19,6 +20,7 @@ const StyledBtn = styled.button<Props>`
     isLogin
       ? 'linear-gradient(-135deg, rgb(0, 231, 149) 0%, rgb(0, 187, 221) 100%)'
       : 'transparent'};
+  cursor: pointer;
 `;
 
 export const Button = ({

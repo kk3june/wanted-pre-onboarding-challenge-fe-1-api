@@ -2,9 +2,10 @@ import styled from '@emotion/styled';
 import { ChangeEvent } from 'react';
 
 type Props = {
-  type: 'text' | 'email' | 'password';
+  type: 'text' | 'textarea' | 'email' | 'password';
   className?: string;
   placeholder: string;
+  value?: string;
   onChange?: (value: string) => void;
 };
 
@@ -12,7 +13,6 @@ const StyledInput = styled.input`
   width: 100%;
   height: 50px;
   padding: 0 10px;
-  margin-bottom: 10px;
   border-style: none;
   border-radius: 5px;
   background-color: white;

@@ -23,7 +23,7 @@ const StyledForm = styled.form`
 
 export default function Auth() {
   const [isLogin, setIsLogin] = useState<boolean>(true);
-  const [token, setToken] = useState<string | null>(null);
+  const [userToken, setUserToken] = useState<string | null>(null);
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isValid, setIsValid] = useState(false);
@@ -31,9 +31,9 @@ export default function Auth() {
   const router = useRouter();
 
   useEffect(() => {
-    setToken(localStorage.getItem('user-token'));
-    if (token) router.push('/');
-  }, [token]);
+    setUserToken(localStorage.getItem('user-token'));
+    if (userToken) router.push('/');
+  }, [userToken]);
 
   useEffect(() => {
     if (isLogin && email.length > 0 && password.length > 0) setIsValid(true);
@@ -64,8 +64,8 @@ export default function Auth() {
         axios
           .post('http://localhost:8080/users/login', { email, password })
           .then((res) => {
-            const userToken = res.data.token;
-            localStorage.setItem('user-token', userToken);
+            const token = res.data.token;
+            localStorage.setItem('user-token', token);
             router.push('/');
           });
       }

@@ -33,7 +33,7 @@ export default function Navbar() {
     <Nav>
       <Container>
         <Logo>To Dos</Logo>
-        <UserBtn>user</UserBtn>
+        <UserBtn>로그아웃</UserBtn>
       </Container>
     </Nav>
   );
