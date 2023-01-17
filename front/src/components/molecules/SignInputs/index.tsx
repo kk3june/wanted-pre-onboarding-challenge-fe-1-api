@@ -10,6 +10,9 @@ type Props = {
 
 const Container = styled.div`
   width: 100%;
+  input {
+    margin-bottom: 15px;
+  }
 `;
 
 export default function SignInputs({

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 
 const Nav = styled.nav`
   position: fixed;
@@ -29,11 +30,23 @@ const UserBtn = styled.a`
 `;
 
 export default function Navbar() {
+  const router = useRouter();
+  const [userToken, setUseToken] = useState('');
+  useEffect(() => {
+    const token = localStorage.getItem('user-token');
+    setUseToken(JSON.stringify(token));
+  }, [userToken]);
+
+  const handleClick = () => {
+    localStorage.removeItem('user-token');
+    router.push('/auth');
+  };
+
   return (
     <Nav>
       <Container>
         <Logo>To Dos</Logo>
-        <UserBtn>로그아웃</UserBtn>
+        <UserBtn onClick={handleClick}>로그아웃</UserBtn>
       </Container>
     </Nav>
   );

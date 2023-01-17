@@ -61,7 +61,6 @@ export default function TodoDetail() {
   const handleClickBtn = (event: React.MouseEvent) => {
     event.preventDefault();
     const targetButton = (event.target as HTMLElement).innerText;
-    console.log(targetButton);
 
     if (targetButton === '수정' || targetButton === '완료')
       setOnModify(!onModify);
@@ -69,9 +68,7 @@ export default function TodoDetail() {
     if (targetButton === '추가') setIsModalOpen(true);
   };
 
-  useEffect(() => {
-    console.log(todoTitle, todoDetail);
-  }, [todoDetail, todoTitle]);
+  useEffect(() => {}, [todoDetail, todoTitle]);
 
   return (
     <Container>
