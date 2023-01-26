@@ -19,7 +19,7 @@ type GetTodoTypes = {
   updatedAt: string;
 };
 
-export default function Todos() {
+export default function Todo() {
   const [todos, setTodos] = useState<GetTodoTypes[]>([
     {
       title: '',

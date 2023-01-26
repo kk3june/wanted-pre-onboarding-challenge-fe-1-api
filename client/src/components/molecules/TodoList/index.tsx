@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Text } from '../../atoms/Text';
+import Link from 'next/link';
 
 const Container = styled.ul`
   width: calc(30%-15px);
@@ -32,14 +33,23 @@ type GetTodoTypes = {
 };
 
 export default function TodoList({ todos }: { todos: GetTodoTypes[] }) {
-  console.log(todos);
   return (
     <Container>
       <Header>
         <Text>TodoList</Text>
       </Header>
       {todos.map((todo) => {
-        return <ListItem key={todo.id}>{todo.title}</ListItem>;
+        return (
+          <Link
+            key={todo.id}
+            href={{
+              pathname: `/todos/[detail]`,
+              query: { detail: `${todo.id}` },
+            }}
+          >
+            <ListItem>{todo.title}</ListItem>
+          </Link>
+        );
       })}
     </Container>
   );

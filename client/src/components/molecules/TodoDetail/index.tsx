@@ -4,7 +4,7 @@ import { Text } from '../../atoms/Text';
 import { Input } from '../../atoms/Input';
 import { Button } from '../../atoms/Button';
 import Modal from '../Modal';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { css } from '@emotion/react';
 
 const Container = styled.div`
